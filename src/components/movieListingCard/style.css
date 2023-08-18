@@ -1,0 +1,40 @@
+.movieCard {
+    width: calc(50% - 5px);
+    margin-bottom: 25px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.posterBlock {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.5;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 10px;
+    transition: all ease 0.5s;
+
+}
+
+.posterImg {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+.textBlock {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 24px;
+    margin-left: 30px;
+    background: rgb(0, 0, 0);
+    height: 40px;
+}
+
+.rating {
+    margin-left: 30px;
+}

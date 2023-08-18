@@ -1,0 +1,11 @@
+.searchResultsPage {
+    min-height: 700px;
+    padding-top: 100px;
+}
+
+.content {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    margin-bottom: 50px;
+}

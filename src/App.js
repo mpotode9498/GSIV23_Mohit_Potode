@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { getApiConfiguration } from "./store/homeSlice";
+import SearchResultPage from "./pages/searchResultPage/SearchResultPage";
 
-function App() {
+// import "./App.css";
+import { fetchAPI } from "./utils/fetchAPI";
+import Navbar from "./components/header/Navbar";
+import MovieListingCard from "./components/movieListingCard/MovieListingCard";
+import MovieDetailsPage from "./pages/movieDetails/MovieDetailsPage";
+
+const App = () => {
+  const dispatch = useDispatch();
+  const { url } = useSelector((state) => state.home);
+
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetchAPI("/configuration");
+
+      const url = {
+        backdrop: res.images.secure_base_url + 'original', //"w300",
+      };
+      dispatch(getApiConfiguration(url));
+    }
+    fetchData();
+  }, [dispatch]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<MovieListingCard />} />
+        <Route path="/search" element={<SearchResultPage />} />
+        <Route path='/movie/:id' element={<MovieDetailsPage/>}/>
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
