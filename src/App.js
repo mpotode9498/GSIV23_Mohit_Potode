@@ -9,6 +9,7 @@ import { fetchAPI } from "./utils/fetchAPI";
 import Navbar from "./components/header/Navbar";
 import MovieListingCard from "./components/movieListingCard/MovieListingCard";
 import MovieDetailsPage from "./pages/movieDetails/MovieDetailsPage";
+import Wrapper from "./components/wrapper/Wrapper";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const App = () => {
       const res = await fetchAPI("/configuration");
 
       const url = {
-        backdrop: res.images.secure_base_url + 'original', //"w300",
+        backdrop: res?.images?.secure_base_url + 'original' // 'original', "w300",
       };
       dispatch(getApiConfiguration(url));
     }
@@ -29,11 +30,13 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
+      <Wrapper>
       <Routes>
-        <Route path="/" element={<MovieListingCard />} />
+        <Route path="/" element={<SearchResultPage />} />
         <Route path="/search" element={<SearchResultPage />} />
         <Route path='/movie/:id' element={<MovieDetailsPage/>}/>
       </Routes>
+      </Wrapper>
     </div>
   );
 };

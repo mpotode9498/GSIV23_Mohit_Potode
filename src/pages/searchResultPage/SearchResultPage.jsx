@@ -5,6 +5,7 @@ import { fetchAPI } from '../../utils/fetchAPI';
 import MovieListingCard from '../../components/movieListingCard/MovieListingCard';
 import { useSelector, useDispatch } from 'react-redux';
 import { getApiConfiguration } from '../../store/homeSlice';
+import './style.css';
 
 
 // const styl = `@media screen and (max-width: 768px) {
@@ -47,7 +48,7 @@ const SearchResultPage = () => {
     setPageNum((prev)=>prev+1)
     setLoading(false)
     
-    // console.log(upcomingMovies, '-----')
+    console.log(upcomingMovies, '-----')
   }
 
   const getUpcomingMoviesForNextPage = async () => {
@@ -61,18 +62,16 @@ const SearchResultPage = () => {
           setResponse(upcomingMovies)
         }
         setPageNum((prev)=>prev+1);
-        console.log(upcomingMovies, '--+++++++++++---')
+        // console.log(upcomingMovies, '--+++++++++++---')
   }
 
   return (
     <div className='searchResultsPage'>
       <h1>SRP PAGE CONTENT</h1>
-     
-        <div className="content">
+        <div className='srpcontent'>
         {response?.results?.map((movie) => { 
         return <MovieListingCard data={movie}/>} )}
         </div>
-      <button onClick={() => navigate('/')}>Go to Home page </button>
     </div>
   )
 }

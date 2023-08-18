@@ -3,9 +3,16 @@
     padding-top: 100px;
 }
 
-.content {
+.srpcontent {
     display: flex;
     flex-flow: row wrap;
-    gap: 10px;
+    gap: 50px;
     margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.movieCard {
+    .posterBlock {
+        margin-bottom: 5px;
+    }
 }

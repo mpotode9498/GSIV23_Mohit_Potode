@@ -3,12 +3,9 @@
     position: relative;
     flex-direction: row;
     gap: 50px;
-    margin-top: 35px;
-    
-    /* @include md {
-        gap: 50px;
-        flex-direction: row;
-    } */
+    margin-top: 85px;
+    flex-flow: nowrap;
+    padding: 20px;
 }
 
 .left {
@@ -37,10 +34,8 @@
     margin-bottom: 15px;
     font-style: italic;
     opacity: 0.5;
-  
         font-size: 20px;
         line-height: 28px;
-    
 }
 
 .overview {

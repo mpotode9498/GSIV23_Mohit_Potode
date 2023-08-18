@@ -32,7 +32,7 @@ const DetailsBanner = ({ crew }) => {
   // const {data, loading} = getMovieDeails();
 
   const { url } = useSelector((state) => state.home);
-  console.log(movieDetail, "------------");
+  console.log(crew, "------------", url?.backdrop + movieDetail?.backdrop);
   //  const _genres = data?.genres?.map((g)=>g.id);
 
     const director = crew?.crew?.filter((f)=> f.job === "Director");
@@ -48,6 +48,8 @@ const DetailsBanner = ({ crew }) => {
 
   return (
     <div className="detailsBanner">
+      {/* {!loading ? ( */}
+      <>
         {!!movieDetail && (
           <React.Fragment>
             <div className="content">
@@ -64,7 +66,7 @@ const DetailsBanner = ({ crew }) => {
                     movieDetail?.vote_average
                   })`}
                 </div>
-                <div className="subtitle">{movieDetail?.tagline}</div>
+                <div className="subtitle">{movieDetail?.tagline}</div>x
                 <div className="info">
                   {movieDetail.release_date && (
                     <div className="infoItem">
@@ -96,8 +98,6 @@ const DetailsBanner = ({ crew }) => {
                     </div>
                   )}
                 </div>
-
-
                 <div className="info">
                  {cast?.length > 0 && (
                     <div className="infoItem">
@@ -115,13 +115,30 @@ const DetailsBanner = ({ crew }) => {
                 </div>
 
                 <div className="overview">
-                  <div className="heading">Description</div>
+                  <div className="heading">Overview</div>
                   <div className="description">{movieDetail?.overview}</div>
                 </div>
               </div>
             </div>
           </React.Fragment>
         )}
+      </>
+      {/* // ) : (
+            //     <div className="detailsBannerSkeleton">
+            //         {/* <ContentWrapper> */}
+      {/* <div className="left skeleton"></div>
+                         <div className="right">
+                             <div className="row skeleton"></div>
+                             <div className="row skeleton"></div>
+                             <div className="row skeleton"></div>
+                             <div className="row skeleton"></div>
+                             <div className="row skeleton"></div>
+                            <div className="row skeleton"></div>
+                            <div className="row skeleton"></div>
+                        </div> */}
+      {/* </ContentWrapper> */}
+      {/* </div>
+            // )} */}
     </div>
   );
 };
