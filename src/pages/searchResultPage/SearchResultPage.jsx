@@ -1,5 +1,4 @@
 import React ,{useState, useEffect} from 'react';
-import { SearchResultsPage } from './Styled';
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchAPI } from '../../utils/fetchAPI';
 import MovieListingCard from '../../components/movieListingCard/MovieListingCard';
