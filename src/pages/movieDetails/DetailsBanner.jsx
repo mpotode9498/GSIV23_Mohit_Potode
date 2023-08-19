@@ -27,6 +27,8 @@ const DetailsBanner = ({ crew }) => {
     getMovieDeails();
   }, [id]);
 
+  const year = movieDetail?.release_date?.split('-', 4)[0]
+
   const { url } = useSelector((state) => state?.movies);
   const director = crew?.crew?.filter((f) => f.job === "Director");
   const cast = crew?.cast?.filter(
@@ -66,7 +68,7 @@ const DetailsBanner = ({ crew }) => {
                       <div className="infoItem">
                         <span className="text bold">Release Date: {""}</span>
                         <span className="text">
-                          {movieDetail?.release_date}
+                          {year}
                         </span>
                       </div>
                     )}
