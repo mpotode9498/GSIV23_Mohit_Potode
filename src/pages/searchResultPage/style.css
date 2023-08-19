@@ -1,6 +1,6 @@
 .searchResultsPage {
     min-height: 700px;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .srpcontent {
@@ -9,10 +9,4 @@
     gap: 50px;
     margin-bottom: 50px;
     flex-wrap: wrap;
-}
-
-.movieCard {
-    .posterBlock {
-        margin-bottom: 5px;
-    }
 }

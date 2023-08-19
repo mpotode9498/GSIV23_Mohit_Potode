@@ -1,32 +1,42 @@
 import React, { useState } from "react";
-import { PrimaryNav, MenuLink, Menu } from "./styled";
-import { useNavigate, useLocation } from "react-router-dom";
+import { PrimaryNav, Menu, SearchInput } from "./styled";
+import { useNavigate } from "react-router-dom";
 import { AiFillHome, AiOutlineSearch } from "react-icons/ai";
+
 const Navbar = () => {
-  const [query, setQuery] = useState("");
+  const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
 
   const searchQueryHandler = () => {
-    navigate(`/search/${query}`);
+    if (!inputValue) return;
+    navigate(`/search/${inputValue}`);
+
+    setTimeout(() => {
+      setInputValue("");
+    }, 2000);
   };
 
   return (
     <>
       <PrimaryNav>
         <Menu>
-          <input
+          <SearchInput
             type="text"
-            placeholder="Search..."
-            onChange={(e) => setQuery(e.target.value)}
+            value={inputValue}
+            placeholder=" Search..."
+            onChange={(e) => setInputValue(e.target.value)}
           />
-          <button onClick={searchQueryHandler}>
+          <button
+            onClick={searchQueryHandler}
+            style={{ width: "50px", marginLeft: "10px" }}
+          >
             <AiOutlineSearch />
           </button>
-          <AiFillHome style={{ width: 50, height: 50, marginLeft: 600 }} onClick={() => navigate('/')} />
-          {/* <MenuLink to="/blog" activeStyle>
-            Movies
-          </MenuLink> */}
         </Menu>
+        <AiFillHome
+          style={{ width: "40px", height: "50px" }}
+          onClick={() => navigate("/")}
+        />
       </PrimaryNav>
     </>
   );
