@@ -51,8 +51,7 @@ Added the fallback images on both list page and movie details page, which will b
 
 ### `Future Improvements`
 1. Would have added the filter on List Page (search results page) by which user can select the upcoming movies order and sort the movies based on user preferences.
-2.Would have included the spinner instead of text for showing the loading part while scrolling on list page.
-3.Would have improved the responsive UI.
+2. Would have included the spinner instead of text for showing the loading part while scrolling on list page.
+3. Would have improved the responsive UI.
 4. Would have added the homepage with the search functionality and which displays the popular movies results using the tmdb API.
 5. Would have added playwright automation test cases for the functional flow.
-   
