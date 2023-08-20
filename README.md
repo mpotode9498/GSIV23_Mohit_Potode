@@ -28,18 +28,18 @@ npm test
 
 ### `Challenges`
 
-#### `1. Infinite Scrolling:`
+#### 1. Infinite Scrolling:
 The code effectively sets up an event listener for the scroll event and defines a callback function (handleScroll) to respond to this event. 
 It checks whether the user has scrolled to the bottom of the page by comparing various properties related to the viewport and document dimensions.
 
-#### `2 State Management:`
+#### 2 State Management:
 Creating a redux store to get the movies backdrop_path to show to image on search result page and movie details page with the size mentioned in configuration API response. It can access the URL backdrop path of movies anywhere in application without passing down the prop to each and every component which improves the performance.
 
-#### `3 List Page Cards (Search Result Page):`
+#### 3 List Page Cards (Search Result Page):
 Creating a cards with the data and images coming from tmbd API's was tough task to make it repsonsive and to get that into the column of 4.
 To solve this, I've used the map function on an array of results, which return the MovieCard component with the image and movie details for each movie. Also used the higher order component to show these results in the middle of page.
 
-#### `4 Error Page:`
+#### 4 Error Page:
 Created a Error page for the wrong URL's which will redirect user automatically to the List Page after 5 seconds.
 
 
