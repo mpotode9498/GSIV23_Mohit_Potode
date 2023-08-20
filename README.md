@@ -55,3 +55,20 @@ Added the fallback images on both list page and movie details page, which will b
 3. Would have improved the responsive UI.
 4. Would have added the homepage with the search functionality and which displays the popular movies results using the tmdb API.
 5. Would have added playwright automation test cases for the functional flow.
+
+### `Screenshots`
+#### List Page & Search Movies
+![1srp](https://github.com/mpotode9498/GSIV23_Mohit_Potode/assets/142591686/612a8dd9-24d3-43a6-83b0-0488eecd1361)
+![3srch](https://github.com/mpotode9498/GSIV23_Mohit_Potode/assets/142591686/65c68569-41c2-49e5-b927-f34959ffb9f5)
+
+#### Details Page
+![2](https://github.com/mpotode9498/GSIV23_Mohit_Potode/assets/142591686/ca24bbc0-2011-4fba-b6d2-d6f4e2388096)
+
+#### Fallback Image On Details Page
+![noposter](https://github.com/mpotode9498/GSIV23_Mohit_Potode/assets/142591686/4888d8c8-ee59-4e3f-9a22-c429905e9eb6)
+
+#### Error Page
+![err](https://github.com/mpotode9498/GSIV23_Mohit_Potode/assets/142591686/d5716f69-dd76-4f2c-af4c-15ef73922c68)
+
+
+
