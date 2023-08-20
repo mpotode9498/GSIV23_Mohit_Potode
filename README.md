@@ -42,9 +42,14 @@ To solve this, I've used the map function on an array of results, which return t
 #### 4 Error Page:
 Created a Error page for the wrong URL's which will redirect user automatically to the List Page after 5 seconds.
 
+#### 5 Poster Images:
+Added the fallback images on both list page and movie details page, which will be displayed on empty spot if the movie poster is not available.
+
 
 ### `Future Improvements`
 1. Would have added the filter on List Page (search results page) by which user can select the upcoming movies order and sort the movies based on user preferences.
-2. Would have added the homepage with the search functionality and which displays the popular movies results using the tmdb API.
-3. Would have improved the responsive UI.
-4. Would have added playwright automation test cases for the functional flow.
+2.Would have included the spinner instead of text for showing the loading part while scrolling on list page.
+3.Would have improved the responsive UI.
+4. Would have added the homepage with the search functionality and which displays the popular movies results using the tmdb API.
+5. Would have added playwright automation test cases for the functional flow.
+   
