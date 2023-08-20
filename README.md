@@ -1,70 +1,50 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `Getting Started`
+After getting the files, you need to go the file directory and run
+
+```shell
+npm install
+```
+and after that start the dev server.
+
+```shell
+npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `tests`
 
-### `npm test`
+To run the unit test cases
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```shell
+npm test
+```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Challenges`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### `1. Infinite Scrolling:`
+The code effectively sets up an event listener for the scroll event and defines a callback function (handleScroll) to respond to this event. 
+It checks whether the user has scrolled to the bottom of the page by comparing various properties related to the viewport and document dimensions.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### `2 State Management:`
+Creating a redux store to get the movies backdrop_path to show to image on search result page and movie details page with the size mentioned in configuration API response. It can access the URL backdrop path of movies anywhere in application without passing down the prop to each and every component which improves the performance.
 
-### `npm run eject`
+#### `3 List Page Cards (Search Result Page):`
+Creating a cards with the data and images coming from tmbd API's was tough task to make it repsonsive and to get that into the column of 4.
+To solve this, I've used the map function on an array of results, which return the MovieCard component with the image and movie details for each movie. Also used the higher order component to show these results in the middle of page.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### `4 Error Page:`
+Created a Error page for the wrong URL's which will redirect user automatically to the List Page after 5 seconds.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### `Future Improvements:`
+1. Would have added the filter on List Page (search results page) by which user can select the upcoming movies order and sort the movies based on user preferences.
+2. Would have added the homepage with the search functionality and which displays the popular movies results using the tmdb API.
+3. Would have improved the responsive UI.
+4. Would have added playwright automation test cases for the functional flow.
