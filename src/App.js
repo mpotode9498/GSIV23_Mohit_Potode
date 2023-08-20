@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { getConfiguration } from "./store/movieSlice";
+import { useDispatch, useSelector } from "react-redux";
+import movieSlice, { getConfiguration } from "./store/movieSlice";
 import SearchResultPage from "./pages/searchResultPage/SearchResultPage";
 import { fetchAPI } from "./utils/fetchAPI";
 import Navbar from "./components/header/Navbar";
@@ -11,6 +11,8 @@ import Error from "./pages/errorPage/Error";
 
 const App = () => {
   const dispatch = useDispatch();
+  const url = useSelector((state) => state.movies)
+  console.log(url)
 
   useEffect(() => {
     async function fetchData() {

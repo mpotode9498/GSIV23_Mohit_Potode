@@ -82,7 +82,7 @@ const SearchResultPage = () => {
           <div className="searchResultsPage">
             <div className="srpcontent">
               {response?.results?.map((movie) => {
-                return <MovieListingCard data={movie} />;
+                return <MovieListingCard data={movie} data-testid='movie-card'/>;
               })}
             </div>
           </div>

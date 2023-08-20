@@ -56,9 +56,10 @@ const DetailsBanner = ({ crew }) => {
                   />
                 </div>
                 <div className="right">
-                  <div className="title">
+                  <div className="title" data-testid='title'>
                     {`${movieDetail?.name || movieDetail?.title}`}
                     <span
+                      data-testid='rating'
                       style={{ color: "#FBBC04" }}
                     >{` (${formatRating})`}</span>
                   </div>
@@ -66,7 +67,7 @@ const DetailsBanner = ({ crew }) => {
                   <div className="info">
                     {movieDetail?.release_date && (
                       <div className="infoItem">
-                        <span className="text bold">Release Date: {""}</span>
+                        <span className="text bold" data-testid='releasedate'>Release Date: {""}</span>
                         <span className="text">
                           {year}
                         </span>
@@ -75,7 +76,7 @@ const DetailsBanner = ({ crew }) => {
 
                     {movieDetail?.runtime && (
                       <div className="infoItem">
-                        <span className="text bold">Runtime: {""}</span>
+                        <span className="text bold" data-testid='runtime'>Runtime: {""}</span>
                         <span className="text">
                           {toHoursAndMinutes(movieDetail?.runtime)}
                         </span>
@@ -99,7 +100,7 @@ const DetailsBanner = ({ crew }) => {
                   <div className="info">
                     {cast?.length > 0 && (
                       <div className="infoItem">
-                        <span className="text bold">Cast: </span>
+                        <span className="text bold" data-testid='cast'>Cast: </span>
                         <span className="text">
                           {cast?.map((actor, index) => (
                             <span key={index}>
@@ -113,7 +114,7 @@ const DetailsBanner = ({ crew }) => {
                   </div>
 
                   <div className="overview">
-                    <div className="heading">Description</div>
+                    <div className="heading" data-testid='desc'>Description</div>
                     <div className="description">{movieDetail?.overview}</div>
                   </div>
                 </div>
@@ -123,7 +124,7 @@ const DetailsBanner = ({ crew }) => {
         </>
       ) : (
         <Wrapper>
-          <div className="loadingtext">
+          <div className="loadingtext" data-testid='loading-text'>
             <span>Loading ...</span>
           </div>
         </Wrapper>

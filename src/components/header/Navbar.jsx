@@ -7,7 +7,7 @@ const Navbar = () => {
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
 
-  const searchQueryHandler = () => {
+  const searchHandler = () => {
     if (!inputValue) return;
     navigate(`/search/${inputValue}`);
 
@@ -27,7 +27,7 @@ const Navbar = () => {
             onChange={(e) => setInputValue(e.target.value)}
           />
           <button
-            onClick={searchQueryHandler}
+            onClick={searchHandler}
             style={{ width: "50px", marginLeft: "10px" }}
           >
             <AiOutlineSearch />
@@ -36,6 +36,7 @@ const Navbar = () => {
         <AiFillHome
           style={{ width: "40px", height: "50px" }}
           onClick={() => navigate("/")}
+          data-testid='home-icon'
         />
       </PrimaryNav>
     </>

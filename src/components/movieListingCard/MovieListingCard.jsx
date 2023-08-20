@@ -13,7 +13,7 @@ const MovieListingCard = ({ data }) => {
     : PosterFallback;
 
   return (
-    <div className="movieCard" onClick={() => navigate(`/movie/${data?.id}`)}>
+    <div className="movieCard" onClick={() => navigate(`/movie/${data?.id}`)} data-testid='moviecard'>
       <div className="posterBlock">
         <img className="posterImgList" src={posterUrl} alt="poster_image" />
       </div>
